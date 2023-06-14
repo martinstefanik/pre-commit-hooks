@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "pchooks"
+version = "0.1.0"
+description = "A collection of simple pre-commit hooks."
+authors = [
+    "Martin Stefanik <stefanik.mar@gmail.com>",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^2.20.0"
+mypy = "^1.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.1.3"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+safe = true
+
+[tool.isort]
+profile = "black"
+line_length = 80
+skip_gitignore = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+]
+
+[tool.bandit]
+exclude_dirs = [
+    "tests",
+]
