@@ -7,6 +7,9 @@ authors = [
 ]
 readme = "README.md"
 
+[tool.poetry.scripts]
+check-multiline-docstrings = "pchooks.check_multiline_docstrings:main"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 

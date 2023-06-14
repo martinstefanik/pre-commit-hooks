@@ -1,0 +1,6 @@
+- id: check-multiline-docstrings
+  name: Multi-line docstring checker
+  description: Check whether multi-line docstrings start and end with a single newline character
+  entry: check-multiline-docstrings
+  language: python
+  types: [python]
