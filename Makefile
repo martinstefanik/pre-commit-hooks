@@ -6,7 +6,7 @@ build:
 	@poetry build
 
 clean:
-	@rm -rf builds dist .coverage .mypy_cache .pytest_cache .tox
+	@rm -rf dist htmlcov .coverage .mypy_cache .pytest_cache
 
 test:
 	@rm -rf .pytest_cache

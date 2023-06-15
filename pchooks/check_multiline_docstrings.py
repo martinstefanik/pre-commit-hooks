@@ -111,4 +111,4 @@ def is_docstring_valid(docstring: Docstring) -> bool:
 
 
 if __name__ == "__main__":
-    SystemExit(main())
+    SystemExit(main())  # pragma: no cover
