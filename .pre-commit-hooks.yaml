@@ -4,3 +4,10 @@
   entry: check-multiline-docstrings
   language: python
   types: [python]
+
+- id: check-module-docstring-space
+  name: Module docstring space checker
+  description: Check whether module docstrings start and end with a single newline character
+  entry: check-module-docstring-spaces
+  language: python
+  types: [python]

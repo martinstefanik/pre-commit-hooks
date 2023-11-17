@@ -1,5 +1,5 @@
 """
-Script for checking whether multi-line docstrings start and end with a single
+CLI for checking whether multi-line docstrings start and end with a single
 newline character so that they are formatted like this very docstring.
 """
 
