@@ -12,7 +12,7 @@ from typing import Sequence, Union
 
 def main(argv: Union[Sequence[str], None] = None) -> int:
     """
-    Entry point for the pre-commit hook.
+    Entry point for the 'check-multiline-docstrings' pre-commit hook.
 
     Args:
         argv: Command-line arguments.
@@ -37,7 +37,7 @@ def main(argv: Union[Sequence[str], None] = None) -> int:
 
 @dataclass
 class Docstring:
-    """Representation of a docstring."""
+    """Representation of a docstring in a Python file."""
 
     file_path: str
     line_number: int
@@ -91,7 +91,8 @@ def extract_docstrings(file_path: str) -> list[Docstring]:
 
 
 def is_docstring_valid(docstring: Docstring) -> bool:
-    """Check whether a given docstring is valid.
+    """
+    Check whether a given docstring is valid.
 
     Args:
         docstring: Docstring to check.
@@ -100,10 +101,13 @@ def is_docstring_valid(docstring: Docstring) -> bool:
         Indication of whether the docstring is valid.
     """
     stripped_docstring = docstring.docstring.strip(" \t")
-    if stripped_docstring.count("\n") > 0:
+    if stripped_docstring.count("\n") > 0:  # multi-line docstring
+        # Multiline docstrings should start with a single newline
         start_match = re.search(r"^\n(?!\n)", stripped_docstring)
         if start_match is None:
             return False
+
+        # Multiline docstrings should and end with a single newline
         end_match = re.search(r"\n+$", stripped_docstring)
         if end_match is None or len(end_match.group()) > 1:
             return False
