@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pchooks"
-version = "1.0.0"
+version = "1.1.0"
 description = "A collection of simple pre-commit hooks."
 authors = [
     "Martin Stefanik <stefanik.mar@gmail.com>",
@@ -9,6 +9,7 @@ readme = "README.md"
 
 [tool.poetry.scripts]
 check-multiline-docstrings = "pchooks.check_multiline_docstrings:main"
+check-module-docstring-space = "pchooks.check_module_docstring_space:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
