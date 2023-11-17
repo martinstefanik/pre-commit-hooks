@@ -1,16 +1,17 @@
 # Pre-commit hooks
 
-This repo is intended to include a collection of simple, mostly Python-related [pre-commit](https://pre-commit.com/) hooks.
+This repo includes a collection of simple [pre-commit](https://pre-commit.com/) hooks for Python.
 
 ## Usage
 
-Add this to your .pre-commit-config.yaml
+Add the following to your `.pre-commit-config.yaml`:
 
 ```yaml
 - repo: https://github.com/martinstefanik/pre-commit-hooks
-    rev: v1.0.0  # Use the ref you want to point at
+    rev: v1.1.0  # Use the ref you want to point at
     hooks:
     - id: check-multiline-docstrings
+    - id: check-module-docstring-space
 ```
 
 ## Available hooks
@@ -43,3 +44,7 @@ def personalized_greeting(name: str) -> None:
 ```
 
 This might be slightly less common but still conforms to the [PEP 257](https://peps.python.org/pep-0257/#multi-line-docstrings) and some people might prefer docstrings formatted this way.
+
+`check-module-docstring-space`
+
+Check that the module docstring is separated from the rest of the code by a pre-defined number of empty lines. This is mostly intended to avoid having no space between the module docstring and the imports. This is something the commonly used code formatter [Black](https://black.readthedocs.io/en/stable/) allows for as of version 2023.9.0.
