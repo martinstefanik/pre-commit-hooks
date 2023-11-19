@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pchooks"
-version = "1.1.0"
+version = "1.1.1"
 description = "A collection of simple pre-commit hooks."
 authors = [
     "Martin Stefanik <stefanik.mar@gmail.com>",
