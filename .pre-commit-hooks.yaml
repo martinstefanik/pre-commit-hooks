@@ -1,12 +1,12 @@
 - id: check-multiline-docstrings
-  name: Multi-line docstring checker
+  name: check multiline docstring formatting
   description: Check whether multi-line docstrings start and end with a single newline character
   entry: check-multiline-docstrings
   language: python
   types: [python]
 
 - id: check-module-docstring-space
-  name: Module docstring space checker
+  name: check module docstring space
   description: Check whether module docstrings start and end with a single newline character
   entry: check-module-docstring-space
   language: python
