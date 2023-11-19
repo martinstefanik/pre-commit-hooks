@@ -58,15 +58,18 @@ def check_module_docstring_space(file_path: str, n_lines: int) -> int:
     return_code = 0
     with open(file_path, "r") as f:
         file_contents = f.read()
-        pattern = re.compile(r'^""".*?"""(\n*)', flags=re.DOTALL)
-        match = pattern.match(file_contents)
-        if match is not None:
-            if match.group(1) != "\n" * (n_lines + 1):
-                return_code = 1
-                print(
-                    f"Module docstring should be followed by {n_lines} empty "
-                    f"{'line' if n_lines == 1 else 'lines'}: {file_path}"
-                )
+
+    pattern = re.compile(r'^""".*?"""(\n*)', flags=re.DOTALL)
+    match = pattern.match(file_contents)
+    if match is not None:  # the file contains a module docstring
+        if match.group(0) == file_contents:  # contains just a module docstring
+            pass
+        elif match.group(1) != "\n" * (n_lines + 1):
+            return_code = 1
+            print(
+                f"Module docstring should be followed by {n_lines} empty "
+                f"{'line' if n_lines == 1 else 'lines'}: {file_path}"
+            )
     return return_code
 
 

@@ -25,6 +25,7 @@ RESOURCES_DIR = os.path.join(os.path.dirname(__file__), "resources")
         (os.path.join(RESOURCES_DIR, "function_end_invalid_3.py"), 1),
         (os.path.join(RESOURCES_DIR, "function_end_invalid_3.py"), 1),
         (os.path.join(RESOURCES_DIR, "function_valid.py"), 0),
+        (os.path.join(RESOURCES_DIR, "empty.py"), 0),
     ],
 )
 def test_correct_validity_marking(file_path: str, expected: int):
